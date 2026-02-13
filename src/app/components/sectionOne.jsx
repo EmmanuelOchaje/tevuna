@@ -83,7 +83,7 @@ const SectionOne = () => {
                 </div>
                 <Image
                   src={item.image}
-                  className="rounded-xl h-62 md:h-fit transition-transform duration-500 ease-in-out group-hover:scale-110"
+                  className="rounded-xl transition-transform duration-500 ease-in-out group-hover:scale-110"
                   alt={item.header}
                 />
               </div>
