@@ -36,55 +36,56 @@ const arr = [
 const SectionOne = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
 
-  const nextSlide = () => {
-    setCurrentSlide((prev) => (prev + 1) % arr.length);
-  };
-
-  const prevSlide = () => {
+  const nextSlide = () => setCurrentSlide((prev) => (prev + 1) % arr.length);
+  const prevSlide = () =>
     setCurrentSlide((prev) => (prev - 1 + arr.length) % arr.length);
-  };
 
   return (
     <motion.div
-      id="sectionOne"
+      id="portfolio"
       initial={{ opacity: 0, y: 50 }}
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.6, ease: "easeOut" }}
       viewport={{ once: true, margin: "-100px" }}
-      className="flex justify-center py-20 flex-col"
+      className="flex justify-center py-12 md:py-20 flex-col px-4 md:px-6"
     >
       <motion.button
         initial={{ opacity: 0, scale: 0.8 }}
         whileInView={{ opacity: 1, scale: 1 }}
         transition={{ duration: 0.4, delay: 0.2 }}
         viewport={{ once: true }}
-        className="font-sans tracking-wider font-medium mx-auto px-6 py-3 rounded-lg bg-[#1b2156]"
+        className="font-sans tracking-wider font-medium mx-auto px-6 py-3 rounded-lg bg-[#1b2156] text-sm md:text-base"
       >
         Live Projects
       </motion.button>
 
-      {/* Slider*/}
-      <div className="relative max-w-6xl mx-auto w-full overflow-hidden">
+      {/* Slider */}
+      <div className="relative w-full max-w-5xl mx-auto mt-6 overflow-hidden">
         <div
           className="flex transition-transform duration-700 ease-in-out"
           style={{ transform: `translateX(-${currentSlide * 100}%)` }}
         >
           {arr.map((item, index) => (
-            <div key={index} className="max-w-full px-4">
-              <h2 className="md:text-6xl text-3xl font-medium font-cabin my-5 text-center">
-                {item.header}
-              </h2>
-              <p className="text-center text-md md:text-lg w-full font-sans text-[#afb8f8] mx-auto">
-                {item.text}
-              </p>
-              <div className="my-6 relative w-full mx-auto rounded-xl overflow-hidden group cursor-pointer">
-                <div className="absolute h-full inset-0 bg-[#00baba]/50 rounded-xl flex justify-center items-center transition-opacity duration-500 ease-in-out z-10 opacity-0 group-hover:opacity-100">
+            <div key={index} className="min-w-full px-2 md:px-8 lg:px-16">
+              {/* Text content */}
+              <div className="text-center mb-4 md:mb-6 px-8 md:px-16">
+                <h2 className="text-2xl sm:text-4xl md:text-5xl lg:text-6xl font-medium font-cabin my-3 md:my-5">
+                  {item.header}
+                </h2>
+                <p className="text-sm sm:text-base md:text-lg font-sans text-[#afb8f8] max-w-xl mx-auto leading-relaxed">
+                  {item.text}
+                </p>
+              </div>
+
+              {/* Image */}
+              <div className="relative w-full mx-auto rounded-xl overflow-hidden group cursor-pointer">
+                <div className="absolute inset-0 bg-[#00baba]/50 rounded-xl flex justify-center items-center transition-opacity duration-500 ease-in-out z-10 opacity-0 group-hover:opacity-100">
                   <Button>View Website</Button>
                 </div>
                 <Image
                   src={item.image}
-                  className="rounded-xl transition-transform duration-500 ease-in-out group-hover:scale-110"
                   alt={item.header}
+                  className="rounded-xl w-full h-48 sm:h-64 md:h-80 lg:h-96 object-cover transition-transform duration-500 ease-in-out group-hover:scale-110"
                 />
               </div>
             </div>
@@ -94,28 +95,36 @@ const SectionOne = () => {
         {/* Navigation Arrows */}
         <button
           onClick={prevSlide}
-          className="absolute left-1 md:left-50 cursor-pointer top-3/5 -translate-y-1/2 hover:bg-[#00baba]/10 rounded-full border p-3 hover:shadow-xl transition-all duration-300 z-20"
+          className="absolute left-0 md:left-4 top-1/2 -translate-y-1/2 bg-black/20 hover:bg-[#00baba]/20 rounded-full border border-white/20 p-2 md:p-3 hover:shadow-xl transition-all duration-300 z-20"
         >
-          <Image src={chevronLeft} className="w-5 h-5" alt="prev" />
+          <Image
+            src={chevronLeft}
+            className="w-4 h-4 md:w-5 md:h-5"
+            alt="prev"
+          />
         </button>
 
         <button
           onClick={nextSlide}
-          className="absolute right-1 md:right-50 cursor-pointer top-3/5 -translate-y-1/2 hover:bg-[#00baba]/10 rounded-full border p-3 transition-all duration-300 z-20"
+          className="absolute right-0 md:right-4 top-1/2 -translate-y-1/2 bg-black/20 hover:bg-[#00baba]/20 rounded-full border border-white/20 p-2 md:p-3 hover:shadow-xl transition-all duration-300 z-20"
         >
-          <Image src={chevronRight} className="w-5 h-5" alt="next" />
+          <Image
+            src={chevronRight}
+            className="w-4 h-4 md:w-5 md:h-5"
+            alt="next"
+          />
         </button>
 
         {/* Dots */}
-        <div className="flex justify-center gap-2 md:mt-6">
+        <div className="flex justify-center gap-2 mt-4 md:mt-6">
           {arr.map((_, index) => (
             <button
               key={index}
               onClick={() => setCurrentSlide(index)}
-              className={`h-3 rounded-full transition-all duration-300 ${
+              className={`h-2 md:h-3 rounded-full transition-all duration-300 ${
                 currentSlide === index
-                  ? "bg-[#00baba] w-8"
-                  : "bg-gray-400 w-3 hover:bg-gray-500"
+                  ? "bg-[#00baba] w-6 md:w-8"
+                  : "bg-gray-400 w-2 md:w-3 hover:bg-gray-500"
               }`}
             />
           ))}
