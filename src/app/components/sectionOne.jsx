@@ -60,7 +60,7 @@ const SectionOne = () => {
       </motion.button>
 
       {/* Slider */}
-      <div className="relative w-full max-w-5xl mx-auto mt-6 overflow-hidden">
+      <div className="relative w-full max-w-4xl mx-auto mt-6 overflow-hidden">
         <div
           className="flex transition-transform duration-700 ease-in-out"
           style={{ transform: `translateX(-${currentSlide * 100}%)` }}
