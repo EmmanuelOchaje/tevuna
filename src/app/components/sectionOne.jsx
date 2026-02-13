@@ -70,7 +70,7 @@ const SectionOne = () => {
           style={{ transform: `translateX(-${currentSlide * 100}%)` }}
         >
           {arr.map((item, index) => (
-            <div key={index} className="min-w-full px-4">
+            <div key={index} className="max-w-full px-4">
               <h2 className="md:text-6xl text-3xl font-medium font-cabin my-5 text-center">
                 {item.header}
               </h2>
@@ -83,7 +83,7 @@ const SectionOne = () => {
                 </div>
                 <Image
                   src={item.image}
-                  className="rounded-xl h-62 md:90 transition-transform duration-500 ease-in-out group-hover:scale-110"
+                  className="rounded-xl h-62 md:h-fit transition-transform duration-500 ease-in-out group-hover:scale-110"
                   alt={item.header}
                 />
               </div>
