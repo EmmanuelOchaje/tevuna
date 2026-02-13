@@ -15,7 +15,7 @@ const Hero = () => {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.4 }}
       >
-        <h1 className="bg-linear-to-r font-cabin from-[#00baba] via-white to-[#00baba] bg-clip-text text-transparent text-4xl md:text-5xl lg:text-6xl leading-tight">
+        <h1 className="bg-linear-to-r font-bold font-cabin from-[#00baba] via-white to-[#00baba] bg-clip-text text-transparent text-4xl md:text-5xl lg:text-6xl leading-tight">
           We Explore Beautiful Experience
         </h1>
       </motion.div>
@@ -25,7 +25,7 @@ const Hero = () => {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}
       >
-        <h2 className="text-white font-cabin text-4xl md:text-5xl lg:text-6xl leading-tight">
+        <h2 className="text-white font-bold font-cabin text-4xl md:text-5xl lg:text-6xl leading-tight">
           Explore our portfolio
         </h2>
       </motion.div>

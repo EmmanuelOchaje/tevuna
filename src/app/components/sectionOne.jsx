@@ -69,33 +69,32 @@ const SectionOne = () => {
             <div key={index} className="min-w-full px-2 md:px-8 lg:px-16">
               {/* Text content */}
               <div className="text-center mb-4 md:mb-6 px-8 md:px-16">
-                <h2 className="text-2xl sm:text-4xl md:text-5xl lg:text-6xl font-medium font-cabin my-3 md:my-5">
+                <h2 className="text-4xl bg-linear-to-r from-[#00baba] via-white to-[#00baba] bg-clip-text text-transparent md:text-5xl lg:text-6xl font-medium font-cabin my-3 md:my-5">
                   {item.header}
                 </h2>
-                <p className="text-sm sm:text-base md:text-lg font-sans text-[#afb8f8] max-w-xl mx-auto leading-relaxed">
+                <p className="text-xs text-balance md:text-lg font-sans text-[#afb8f8] max-w-full mx-auto leading-relaxed">
                   {item.text}
                 </p>
               </div>
 
               {/* Image */}
-              <div className="relative w-full mx-auto rounded-xl overflow-hidden group cursor-pointer">
+              <div className="relative w-fit mx-auto rounded-xl overflow-hidden group cursor-pointer">
                 <div className="absolute inset-0 bg-[#00baba]/50 rounded-xl flex justify-center items-center transition-opacity duration-500 ease-in-out z-10 opacity-0 group-hover:opacity-100">
                   <Button>View Website</Button>
                 </div>
                 <Image
                   src={item.image}
                   alt={item.header}
-                  className="rounded-xl w-full h-48 sm:h-64 md:h-80 lg:h-96 object-cover transition-transform duration-500 ease-in-out group-hover:scale-110"
+                  className="rounded-xl w-full h-48 sm:h-64 md:h-80 lg:h-96 transition-transform duration-500 ease-in-out group-hover:scale-110"
                 />
               </div>
             </div>
           ))}
         </div>
-
         {/* Navigation Arrows */}
         <button
           onClick={prevSlide}
-          className="absolute left-0 md:left-4 top-1/2 -translate-y-1/2 bg-black/20 hover:bg-[#00baba]/20 rounded-full border border-white/20 p-2 md:p-3 hover:shadow-xl transition-all duration-300 z-20"
+          className="absolute left-0 md:left-4 top-3/5 -translate-y-1/2 bg-black/20 hover:bg-[#00baba]/20 rounded-full border border-white/20 p-2 md:p-3 hover:shadow-xl transition-all duration-300 z-20"
         >
           <Image
             src={chevronLeft}
@@ -106,7 +105,7 @@ const SectionOne = () => {
 
         <button
           onClick={nextSlide}
-          className="absolute right-0 md:right-4 top-1/2 -translate-y-1/2 bg-black/20 hover:bg-[#00baba]/20 rounded-full border border-white/20 p-2 md:p-3 hover:shadow-xl transition-all duration-300 z-20"
+          className="absolute right-0 md:right-4 top-3/5 -translate-y-1/2 bg-black/20 hover:bg-[#00baba]/20 rounded-full border border-white/20 p-2 md:p-3 hover:shadow-xl transition-all duration-300 z-20"
         >
           <Image
             src={chevronRight}

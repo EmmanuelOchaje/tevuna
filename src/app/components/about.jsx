@@ -56,7 +56,7 @@ const About = () => {
     <section
       ref={sectionRef}
       id="about"
-      className="relative text-[#afb8f8] font-sans pt-20 pb-10 px-6 overflow-hidden"
+      className="relative text-[#afb8f8] font-sans pt-20 pb-5 md:pb-10 px-6 overflow-hidden"
     >
       <div className="absolute top-0 right-0 w-96 h-96 rounded-full bg-[#00baba]/5 blur-3xl pointer-events-none" />
       <div className="absolute bottom-0 left-0 w-72 h-72 rounded-full bg-[#1b2156]/40 blur-3xl pointer-events-none" />
@@ -82,7 +82,7 @@ const About = () => {
             initial="hidden"
             animate={inView ? "show" : "hidden"}
           >
-            <h2 className="text-5xl font-bold text-white leading-tight mb-8">
+            <h2 className="text-4xl md:text-5xl lg:text-6xl  font-bold text-white leading-tight mb-8">
               We Are{" "}
               <span className="bg-linear-to-r from-[#00baba] via-white to-[#00baba] bg-clip-text text-transparent">
                 Tenuva
@@ -95,7 +95,7 @@ const About = () => {
               brands and smart marketing campaigns, we offer everything you need
               to thrive in the digital world.
             </p>
-            <p className="text-base leading-relaxed mb-10">
+            <p className="text-base leading-relaxed mb-0 md:mb-10">
               Our approach is simple: understand your goals, bring our best
               ideas to the table, and build something you're proud of.
             </p>
