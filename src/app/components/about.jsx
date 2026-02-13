@@ -58,8 +58,8 @@ const About = () => {
       id="about"
       className="relative text-[#afb8f8] font-sans pt-20 pb-5 md:pb-10 px-6 overflow-hidden"
     >
-      <div className="absolute top-0 right-0 w-96 h-96 rounded-full bg-[#00baba]/5 blur-3xl pointer-events-none" />
-      <div className="absolute bottom-0 left-0 w-72 h-72 rounded-full bg-[#1b2156]/40 blur-3xl pointer-events-none" />
+      {/*  <div className="absolute top-0 right-0 w-96 h-96 rounded-full bg-[#00baba]/5 blur-3xl pointer-events-none" />
+      <div className="absolute bottom-0 left-0 w-72 h-72 rounded-full bg-[#1b2156]/40 blur-3xl pointer-events-none" /> */}
 
       <div className="max-w-6xl mx-auto">
         {/* Label */}
